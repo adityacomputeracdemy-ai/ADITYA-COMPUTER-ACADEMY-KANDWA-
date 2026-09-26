@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0877c9">
+<title>Aditya Computer Academy</title>
+
+<style>
+:root{
+--blue:#0877c9;
+--sky:#55c9f5;
+--green:#18b981;
+--navy:#062d58;
+--text:#16344d;
+--muted:#60788b;
+}
+
+*{
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial,"Noto Sans Devanagari",sans-serif;
+background:linear-gradient(180deg,#f8fdff,#eaf8ff,#effff8);
+color:var(--text);
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.wrap{
+width:min(1150px,92%);
+margin:auto;
+}
+
+.top{
+background:var(--navy);
+color:#fff;
+padding:8px 0;
+font-size:13px;
+}
+
+nav{
+position:sticky;
+top:0;
+z-index:50;
+background:#ffffffee;
+backdrop-filter:blur(12px);
+border-bottom:1px solid #d9edf7;
+}
+
+.nav{
+height:72px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:bold;
+color:var(--navy);
+}
+
+.logo img{
+width:54px;
+height:54px;
+border-radius:12px;
+object-fit:contain;
+}
+
+.logo small{
+display:block;
+color:var(--blue);
+letter-spacing:1.5px;
+}
+
+.links{
+display:flex;
+gap:17px;
+font-size:14px;
+font-weight:bold;
+}
+
+.links a:hover{
+color:var(--blue);
+}
+
+.menu{
+display:none;
+border:0;
+background:#eaf8ff;
+border-radius:10px;
+padding:10px;
+font-size:22px;
+}
+
+.hero{
+padding:70px 0;
+}
+
+.heroGrid{
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:35px;
+align-items:center;
+}
+
+.badge{
+display:inline-block;
+background:#ddf5ff;
+color:var(--blue);
+padding:9px 14px;
+border-radius:30px;
+font-weight:bold;
+font-size:13px;
+}
+
+h1{
+font-size:clamp(40px,6vw,70px);
+line-height:1.02;
+color:var(--navy);
+margin:18px 0;
+}
+
+h1 span{
+color:var(--blue);
+}
+
+h2{
+color:var(--navy);
+font-size:34px;
+}
+
+.lead{
+font-size:17px;
+line-height:1.8;
+color:var(--muted);
+}
+
+.btns{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin:22px 0;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border:0;
+border-radius:13px;
+padding:12px 17px;
+font-weight:bold;
+cursor:pointer;
+font-size:14px;
+}
+
+.primary{
+background:linear-gradient(135deg,var(--blue),var(--sky));
+color:#fff;
+}
+
+.green{
+background:linear-gradient(135deg,#0d9d6d,var(--green));
+color:#fff;
+}
+
+.outline{
+background:#fff;
+color:var(--blue);
+border:1px solid #bcdfee;
+}
+
+.dark{
+background:var(--navy);
+color:#fff;
+}
+
+.heroCard,.card{
+background:#fff;
+border:1px solid #d8edf7;
+border-radius:24px;
+box-shadow:0 12px 35px #062d5814;
+}
+
+.heroCard{
+padding:20px;
+position:relative;
+}
+
+.heroCard img{
+width:100%;
+display:block;
+border-radius:18px;
+}
+
+.float{
+position:absolute;
+background:#fff;
+padding:11px 14px;
+border-radius:13px;
+box-shadow:0 8px 25px #062d5820;
+font-weight:bold;
+font-size:13px;
+}
+
+.f1{
+left:-12px;
+top:25px;
+}
+
+.f2{
+right:-12px;
+bottom:25px;
+}
+
+section{
+padding:65px 0;
+}
+
+.head{
+text-align:center;
+max-width:750px;
+margin:0 auto 32px;
+}
+
+.eyebrow{
+color:var(--blue);
+font-size:12px;
+font-weight:bold;
+letter-spacing:1.5px;
+}
+
+.head p{
+color:var(--muted);
+line-height:1.7;
+}
+
+.stats,.grid3,.grid2{
+display:grid;
+gap:18px;
+}
+
+.stats{
+grid-template-columns:repeat(4,1fr);
+}
+
+.grid3{
+grid-template-columns:repeat(3,1fr);
+}
+
+.grid2{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stat{
+background:#fff;
+padding:20px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 8px 25px #062d5810;
+}
+
+.stat b{
+display:block;
+font-size:28px;
+color:var(--blue);
+}
+
+.stat span{
+font-size:13px;
+color:var(--muted);
+}
+
+.card{
+padding:22px;
+}
+
+.courseIcon{
+width:52px;
+height:52px;
+display:grid;
+place-items:center;
+background:#e6f8ff;
+border-radius:14px;
+font-size:25px;
+}
+
+.course h3{
+color:var(--navy);
+margin:12px 0 6px;
+}
+
+.course p{
+color:var(--muted);
+line-height:1.6;
+font-size:14px;
+}
+
+.actions{
+display:flex;
+gap:8px;
+margin-top:15px;
+}
+
+.small{
+flex:1;
+padding:10px 8px;
+font-size:12px;
+}
+
+.feature{
+background:linear-gradient(145deg,#fff,#effaff);
+padding:21px;
+border:1px solid #d8edf7;
+border-radius:20px;
+}
+
+.feature h3{
+margin:8px 0;
+}
+
+.feature p{
+font-size:14px;
+color:var(--muted);
+line-height:1.6;
+}
+
+.fund{
+background:linear-gradient(135deg,#062d58,#0877c9);
+color:#fff;
+}
+
+.fund h2,
+.fund .head p{
+color:#fff;
+}
+
+.part{
+background:#ffffff12;
+border:1px solid #ffffff2d;
+padding:20px;
+border-radius:20px;
+}
+
+.part h3{
+margin-bottom:8px;
+}
+
+.part p{
+color:#dff5ff;
+line-height:1.7;
+font-size:14px;
+}
+
+.notes{
+background:#f3fcff;
+}
+
+.note p{
+color:var(--muted);
+line-height:1.7;
+font-size:14px;
+}
+
+.contactBox{
+background:linear-gradient(145deg,#effaff,#eafff5);
+padding:25px;
+border-radius:22px;
+}
+
+form{
+display:grid;
+gap:11px;
+}
+
+input,select,textarea{
+width:100%;
+padding:13px;
+border:1px solid #cce3ed;
+border-radius:11px;
+font:inherit;
+outline:0;
+background:#fff;
+}
+
+.tabs{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-bottom:15px;
+}
+
+.tab{
+padding:10px 13px;
+border:1px solid #cce3ed;
+background:#fff;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tab.active{
+background:var(--blue);
+color:#fff;
+}
+
+.panel{
+display:none;
+}
+
+.panel.active{
+display:block;
+}
+
+.subjects{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin:15px 0;
+}
+
+.subject{
+background:#eefaff;
+padding:9px;
+border-radius:9px;
+font-size:13px;
+}
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:#00182aa8;
+z-index:100;
+align-items:center;
+justify-content:center;
+padding:15px;
+}
+
+.modal.show{
+display:flex;
+}
+
+.modalBox{
+background:#fff;
+width:min(720px,100%);
+max-height:92vh;
+overflow:auto;
+border-radius:22px;
+padding:25px;
+position:relative;
+}
+
+.close{
+position:absolute;
+right:14px;
+top:12px;
+border:0;
+border-radius:50%;
+width:38px;
+height:38px;
+font-size:22px;
+cursor:pointer;
+}
+
+.notice{
+padding:12px;
+border-radius:10px;
+background:#e9fff5;
+color:#08734e;
+margin:10px 0;
+font-size:14px;
+}
+
+.error{
+background:#fff0f0;
+color:#a52a2a;
+}
+
+footer{
+background:#062d58;
+color:#cceaff;
+padding:35px 0 18px;
+}
+
+.foot{
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr;
+gap:25px;
+}
+
+.foot h3{
+color:#fff;
+}
+
+.foot a,
+.foot p{
+display:block;
+color:#b8d7e8;
+font-size:13px;
+line-height:1.8;
+}
+
+.copy{
+text-align:center;
+border-top:1px solid #ffffff1c;
+margin-top:22px;
+padding-top:14px;
+font-size:12px;
+}
+
+.toast{
+position:fixed;
+right:15px;
+bottom:15px;
+background:#062d58;
+color:#fff;
+padding:14px 18px;
+border-radius:13px;
+display:none;
+z-index:200;
+max-width:350px;
+}
+
+.toast.show{
+display:block;
+}
+
+@media(max-width:850px){
+
+.heroGrid,
+.grid2{
+grid-template-columns:1fr;
+}
+
+.grid3{
+grid-template-columns:1fr 1fr;
+}
+
+.stats{
+grid-template-columns:1fr 1fr;
+}
+
+.links{
+display:none;
+}
+
+.links.open{
+display:flex;
+position:absolute;
+top:72px;
+left:0;
+right:0;
+background:#fff;
+flex-direction:column;
+padding:18px;
+box-shadow:0 10px 20px #0002;
+}
+
+.menu{
+display:block;
+}
+
+}
+
+@media(max-width:560px){
+
+.grid3,
+.stats,
+.subjects{
+grid-template-columns:1fr;
+}
+
+.hero{
+padding-top:45px;
+}
+
+.foot{
+grid-template-columns:1fr;
+}
+
+.f1,
+.f2{
+position:static;
+display:inline-block;
+margin-top:8px;
+}
+
+h2{
+font-size:29px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+<div class="wrap">
+🎓 Admission Open &nbsp; | &nbsp;
+📞 <a href="tel:9305066046">9305066046</a>
+</div>
+</div>
+
+<nav>
+<div class="wrap nav">
+
+<a class="logo" href="#home">
+<img src="logo.jpg" alt="Aditya Computer Academy Logo">
+<span>
+ADITYA<br>
+<small>COMPUTER ACADEMY</small>
+</span>
+</a>
+
+<button class="menu"
+onclick="document.querySelector('.links').classList.toggle('open')">
+☰
+</button>
+
+<div class="links">
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#fundamentals">Fundamentals</a>
+<a href="#notes">Notes</a>
+<a href="#student">Student Zone</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="wrap heroGrid">
+
+<div>
+
+<span class="badge">
+💻 Learn • Grow • Succeed
+</span>
+
+<h1>
+Computer Skills for a
+<span>Better Future</span>
+</h1>
+
+<p class="lead">
+Aditya Computer Academy में practical computer education,
+career-focused courses, notes और student services एक ही जगह।
+</p>
+
+<div class="btns">
+
+<a class="btn primary" href="#courses">
+📚 Explore Courses
+</a>
+
+<button class="btn green" onclick="openAdmission()">
+📝 Enroll Now
+</button>
+
+</div>
+
+<div class="btns">
+
+<a class="btn dark" href="tel:9305066046">
+📞 Call Now
+</a>
+
+<a class="btn outline"
+target="_blank"
+href="https://wa.me/919305066046?text=Namaste%20Aditya%20Computer%20Academy%2C%20mujhe%20course%20ki%20jankari%20chahiye.">
+💬 WhatsApp
+</a>
+
+<a class="btn outline"
+target="_blank"
+href="https://www.instagram.com/adityacomputeracademy?stkn=dGVsMTVxcXZ2eTFo.">
+📸 Instagram
+</a>
+
+</div>
+
+</div>
+
+<div class="heroCard">
+
+<img src="logo.jpg" alt="ACA Logo">
+
+<span class="float f1">
+⭐ Practical Learning
+</span>
+
+<span class="float f2">
+🤖 AI + Digital Skills
+</span>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="wrap stats">
+
+<div class="stat">
+<b>10+</b>
+<span>Courses</span>
+</div>
+
+<div class="stat">
+<b>100%</b>
+<span>Practical Focus</span>
+</div>
+
+<div class="stat">
+<b>AI</b>
+<span>Modern Skills</span>
+</div>
+
+<div class="stat">
+<b>ACA</b>
+<span>Learn • Grow • Succeed</span>
+</div>
+
+</div>
+</section>
+
+<section id="courses">
+<div class="wrap">
+
+<div class="head">
+<span class="eyebrow">OUR COURSES</span>
+<h2>Career-Focused Courses</h2>
+<p>
+View Subjects से syllabus देखें और Enroll Now से admission form खोलें।
+</p>
+</div>
+
+<div class="grid3" id="courseGrid"></div>
+
+</div>
+</section>
+
+<section>
+<div class="wrap">
+
+<div class="head">
+<span class="eyebrow">WHY ACA</span>
+<h2>Complete Digital Learning</h2>
+</div>
+
+<div class="grid3">
+
+<div class="feature">
+🧑‍💻
+<h3>Practical Training</h3>
+<p>
+Real-world computer, typing, office और project based learning.
+</p>
+</div>
+
+<div class="feature">
+🤖
+<h3>AI & Modern Skills</h3>
+<p>
+AI basics, prompts, productivity tools और responsible AI use.
+</p>
+</div>
+
+<div class="feature">
+📚
+<h3>Notes Library</h3>
+<p>
+Hindi-English text notes और print/PDF friendly study material.
+</p>
+</div>
+
+<div class="feature">
+📊
+<h3>Office & Accounts</h3>
+<p>
+MS Office, Excel, PowerPoint, Tally Prime और GST skills.
+</p>
+</div>
+
+<div class="feature">
+🌐
+<h3>Web Skills</h3>
+<p>
+HTML, CSS, JavaScript basics और responsive website concepts.
+</p>
+</div>
+
+<div class="feature">
+🎓
+<h3>Student Services</h3>
+<p>
+Student profile, certificate और marksheet lookup system.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="fund" id="fundamentals">
+<div class="wrap">
+
+<div class="head">
+<span class="eyebrow">COMPUTER FUNDAMENTALS</span>
+<h2>Computer Parts — Hindi + English</h2>
+<p>Computer के मुख्य parts और उनका उपयोग।</p>
+</div>
+
+<div class="grid2">
+
+<div class="part">
+<h3>🖥️ Monitor / मॉनिटर</h3>
+<p>
+<b>English:</b> Displays text, images, videos and software output.
+<br>
+<b>हिंदी:</b> कंप्यूटर का output स्क्रीन पर दिखाता है।
+</p>
+</div>
+
+<div class="part">
+<h3>⌨️ Keyboard / कीबोर्ड</h3>
+<p>
+<b>English:</b> Used to type letters, numbers and commands.
+<br>
+<b>हिंदी:</b> अक्षर, नंबर और commands टाइप करने के लिए।
+</p>
+</div>
+
+<div class="part">
+<h3>🖱️ Mouse / माउस</h3>
+<p>
+<b>English:</b> Pointing device for click, select, drag and navigation.
+<br>
+<b>हिंदी:</b> स्क्रीन पर object चुनने और control करने के लिए।
+</p>
+</div>
+
+<div class="part">
+<h3>🖥️ CPU / System Unit</h3>
+<p>
+<b>English:</b> Contains processor, motherboard, RAM and storage.
+<br>
+<b>हिंदी:</b> मुख्य hardware components को रखने वाली unit।
+</p>
+</div>
+
+<div class="part">
+<h3>🖨️ Printer / प्रिंटर</h3>
+<p>
+<b>English:</b> Produces hard copies of documents and images.
+<br>
+<b>हिंदी:</b> document/image की paper copy निकालता है।
+</p>
+</div>
+
+<div class="part">
+<h3>💾 HDD/SSD / स्टोरेज</h3>
+<p>
+<b>English:</b> Stores files, programs and operating-system data.
+<br>
+<b>हिंदी:</b> files और software को सुरक्षित रखने के लिए।
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+
+<div class="head">
+<span class="eyebrow">AI & FUTURE SKILLS</span>
+<h2>AI को समझें, Smart तरीके से काम करें</h2>
+<p>
+Generative AI, prompt writing, productivity, digital safety
+और responsible AI use की basic learning।
+</p>
+</div>
+
+<div class="grid3">
+
+<div class="card">
+<h3>🤖 AI Basics</h3>
+<p>
+AI क्या है, कहाँ उपयोग होता है और इसकी limitations क्या हैं।
+</p>
+</div>
+
+<div class="card">
+<h3>✍️ Prompt Skills</h3>
+<p>
+Clear prompts लिखकर बेहतर learning और productivity results पाना।
+</p>
+</div>
+
+<div class="card">
+<h3>🔐 Safe AI</h3>
+<p>
+Passwords, personal data और sensitive information को सुरक्षित रखना।
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="notes" id="notes">
+<div class="wrap">
+
+<div class="head">
+<span class="eyebrow">NOTES LIBRARY</span>
+<h2>Course Notes — Text + Print/PDF</h2>
+</div>
+
+<div class="grid3" id="notesGrid"></div>
+
+</div>
+</section>
+
+<section id="student">
+<div class="wrap">
+
+<div class="head">
+<span class="eyebrow">STUDENT ZONE</span>
+<h2>Student Login & Admin Panel</h2>
+<p>
+यह single-file demo localStorage पर चलता है।
+Real multi-device online login/database के लिए backend चाहिए।
+</p>
+</div>
+
+<div class="tabs">
+
+<button class="tab active"
+onclick="tab('studentPanel',this)">
+🎓 Student Login
+</button>
+
+<button class="tab"
+onclick="tab('adminPanel',this)">
+🔐 Admin Login
+</button>
+
+<button class="tab"
+onclick="tab('verifyPanel',this)">
+📜 Certificate / Marksheet
+</button>
+
+</div>
+
+<div id="studentPanel"
+class="panel active contactBox">
+
+<form onsubmit="studentLogin(event)">
+
+<div class="grid2">
+<input id="sid" required placeholder="Student ID">
+<input id="smobile" required placeholder="Registered Mobile">
+</div>
+
+<button class="btn primary">
+Login
+</button>
+
+</form>
+
+<div id="studentResult"></div>
+
+</div>
+
+<div id="adminPanel"
+class="panel contactBox">
+
+<form onsubmit="adminLogin(event)">
+
+<div class="grid2">
+<input id="auser" required placeholder="Admin Username">
+<input id="apass" type="password" required placeholder="Admin Password">
+</div>
+
+<button class="btn dark">
+Admin Login
+</button>
+
+</form>
+
+<div id="adminResult"></div>
+
+</div>
+
+<div id="verifyPanel"
+class="panel contactBox">
+
+<div class="grid2">
+
+<button class="btn primary"
+onclick="lookup('certificate')">
+📜 Download Certificate
+</button>
+
+<button class="btn green"
+onclick="lookup('marksheet')">
+📊 Download Marksheet
+</button>
+
+</div>
+
+<p style="color:#60788b">
+Student ID डालने के बाद print window खुलेगी;
+वहाँ Print → Save as PDF कर सकते हैं।
+</p>
+
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+
+<div class="wrap grid2">
+
+<div class="contactBox">
+
+<span class="eyebrow">CONTACT</span>
+
+<h2>Aditya Computer Academy</h2>
+
+<p>📞 <b>9305066046</b></p>
+
+<p>
+💬 WhatsApp पर direct message करें।
+</p>
+
+<p>
+📸 Instagram: @adityacomputeracademy
+</p>
+
+<p>
+📍 <b>Aditya Computer Academy</b><br>
+Kandwa Panchkosi Road, Varanasi - 221106
+</p>
+
+<div class="btns">
+
+<a class="btn green"
+target="_blank"
+href="https://wa.me/919305066046?text=Namaste%20ACA%2C%20mujhe%20admission%20ki%20jankari%20chahiye.">
+WhatsApp
+</a>
+
+<a class="btn primary" href="tel:9305066046">
+Call
+</a>
+
+<a class="btn outline"
+target="_blank"
+href="https://www.google.com/maps/search/?api=1&query=Aditya%20Computer%20Academy%2C%20Kandwa%20Panchkosi%20Road%2C%20Varanasi%20221106">
+📍 Google Maps
+</a>
+
+</div>
+
+</div>
+
+<div class="contactBox">
+
+<h2>Admission Enquiry</h2>
+
+<form onsubmit="admission(event,false)">
+
+<div class="grid2">
+
+<input id="adName"
+required
+placeholder="Student Name">
+
+<input id="adMobile"
+required
+pattern="[0-9]{10}"
+placeholder="Mobile Number">
+
+</div>
+
+<div class="grid2">
+
+<input id="adEmail"
+type="email"
+placeholder="Email">
+
+<select id="adCourse" required>
+<option value="">Select Course</option>
+</select>
+
+</div>
+
+<textarea
+id="adMsg"
+rows="3"
+placeholder="Address / Message"></textarea>
+
+<button class="btn green">
+Submit Admission Form
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="wrap foot">
+
+<div>
+<h3>Aditya Computer Academy</h3>
+<p>
+Learn • Grow • Succeed<br>
+Computer education & digital skills.
+</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<a href="#courses">Courses</a>
+<a href="#fundamentals">Fundamentals</a>
+<a href="#notes">Notes</a>
+<a href="#student">Student Zone</a>
+</div>
+
+<div>
+<h3>Connect</h3>
+<a href="tel:9305066046">📞 9305066046</a>
+<a target="_blank" href="https://wa.me/919305066046">💬 WhatsApp</a>
+<a target="_blank" href="https://www.instagram.com/adityacomputeracademy?stkn=dGVsMTVxcXZ2eTFo.">📸 Instagram</a>
+</div>
+
+</div>
+
+<div class="wrap copy">
+© 2026 Aditya Computer Academy • All Rights Reserved
+</div>
+
+</footer>
+
+<div class="modal" id="courseModal">
+
+<div class="modalBox">
+
+<button class="close"
+onclick="closeM('courseModal')">
+×
+</button>
+
+<div id="courseBody"></div>
+
+</div>
+
+</div>
+
+<div class="modal" id="admissionModal">
+
+<div class="modalBox">
+
+<button class="close"
+onclick="closeM('admissionModal')">
+×
+</button>
+
+<h2>📝 Admission Form</h2>
+
+<form onsubmit="admission(event,true)">
+
+<div class="grid2">
+
+<input id="mName"
+required
+placeholder="Student Name">
+
+<input id="mFather"
+required
+placeholder="Father / Guardian Name">
+
+</div>
+
+<div class="grid2">
+
+<input id="mMobile"
+required
+pattern="[0-9]{10}"
+placeholder="Mobile Number">
+
+<input id="mEmail"
+type="email"
+placeholder="Email">
+
+</div>
+
+<div class="grid2">
+
+<select id="mCourse" required>
+<option value="">Select Course</option>
+</select>
+
+<input id="mCity"
+placeholder="City">
+
+</div>
+
+<textarea
+id="mAddress"
+rows="3"
+placeholder="Full Address"></textarea>
+
+<button class="btn green">
+Submit Form
+</button>
+
+</form>
+
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+const courses=[
+
+["ADCA","🎓","12 Months",
+"Advanced Diploma in Computer Applications",
+[
+"Fundamentals of Computer",
+"Notepad",
+"WordPad",
+"MS Word",
+"MS Excel",
+"MS PowerPoint",
+"Tally Prime",
+"Typing Hindi & English",
+"Photoshop",
+"CorelDRAW",
+"Internet",
+"Website Design",
+"Email & Digital Skills",
+"AI Basics"
+]],
+
+["DCA","💻","6 Months",
+"Diploma in Computer Applications",
+[
+"Fundamentals of Computer",
+"MS Office",
+"MS Word",
+"MS Excel",
+"PowerPoint",
+"Tally",
+"Internet",
+"Email",
+"Typing",
+"Digital Safety"
+]],
+
+["CCC","📘","3 Months",
+"Computer Concepts & Digital Literacy",
+[
+"Fundamentals of Computer",
+"LibreOffice Writer",
+"LibreOffice Calc",
+"LibreOffice Impress",
+"Internet",
+"Email",
+"Cyber Safety",
+"Digital Services"
+]],
+
+["DTP","🎨","6 Months",
+"Desktop Publishing & Graphic Design",
+[
+"CorelDRAW",
+"Photoshop",
+"Page Layout",
+"Typography",
+"Logo & Poster Design",
+"Photo Editing",
+"Printing Basics",
+"Social Media Creatives"
+]],
+
+["PGDCA","🧠","12 Months",
+"Post Graduate Diploma in Computer Applications",
+[
+"Computer Fundamentals",
+"Programming Basics",
+"DBMS",
+"HTML/CSS",
+"JavaScript Basics",
+"MS Office",
+"Operating Systems",
+"Networking",
+"Internet",
+"Project Work",
+"Cyber Security Basics"
+]],
+
+["Tally Prime + GST","📊","3 Months",
+"Accounting & GST Practical Course",
+[
+"Accounting Fundamentals",
+"Company Creation",
+"Ledger & Groups",
+"Voucher Entry",
+"Inventory",
+"GST Setup",
+"GST Invoicing",
+"Reports",
+"Bank Reconciliation",
+"Practical Projects"
+]],
+
+["Typing Hindi & English","⌨️","3 Months",
+"Speed, accuracy & office typing",
+[
+"English Typing",
+"Hindi Typing",
+"Keyboard Practice",
+"Accuracy Training",
+"Speed Tests",
+"Office Typing",
+"Data Entry Practice"
+]],
+
+["Web Design","🌐","6 Months",
+"Modern Website Design",
+[
+"HTML",
+"CSS",
+"Responsive Design",
+"JavaScript Basics",
+"Forms",
+"UI Basics",
+"Website Publishing",
+"Portfolio Project"
+]],
+
+["DFA","💼","3 Months",
+"Diploma in Financial Accounting",
+[
+"Accounting Basics",
+"MS Excel",
+"Tally Prime",
+"GST",
+"Billing",
+"Inventory",
+"Reports",
+"Practical Accounting"
+]],
+
+["MS Office","📑","2 Months",
+"Word, Excel & PowerPoint",
+[
+"MS Word",
+"MS Excel",
+"MS PowerPoint",
+"Formatting",
+"Charts",
+"Formulas",
+"Functions",
+"Presentations",
+"Office Productivity"
+]]
+
+];
+
+const notes=[
+
+["Computer Fundamentals",
+"Computer एक electronic device है जो input लेता है, process करता है और output देता है। मुख्य parts: CPU, RAM, storage, monitor, keyboard और mouse."],
+
+["MS Word",
+"MS Word word-processing software है। इसमें document बनाना, formatting, tables, page setup, header/footer और printing जैसे काम होते हैं."],
+
+["MS Excel",
+"Excel में rows, columns और cells होते हैं। SUM, AVERAGE, MAX, MIN, COUNT जैसी formulas से data calculate किया जाता है."],
+
+["Internet & Email",
+"Browser, search, URL, email, attachments, strong passwords, phishing awareness और safe browsing basic digital skills हैं."],
+
+["AI Basics",
+"Artificial Intelligence computer systems को intelligent tasks करने में मदद करता है। Generative AI text और अन्य content बना सकता है; outputs verify करना जरूरी है."],
+
+["Tally Prime + GST",
+"Company creation, ledger, vouchers, inventory, GST setup, sales/purchase invoice और reports का practical workflow सीखें."]
+
+];
+
+function init(){
+
+let cg=document.getElementById("courseGrid");
+
+courses.forEach((c,i)=>{
+
+cg.innerHTML+=`
+
+<article class="card course">
+
+<div class="courseIcon">
+${c[1]}
+</div>
+
+<h3>${c[0]}</h3>
+
+<p>
+${c[3]}
+<br>
+<b>${c[2]}</b>
+</p>
+
+<div class="actions">
+
+<button
+class="btn outline small"
+onclick="viewCourse(${i})">
+👁 View Subjects
+</button>
+
+<button
+class="btn primary small"
+onclick="openAdmission('${c[0]}')">
+Enroll Now
+</button>
+
+</div>
+
+</article>
+
+`;
+
+});
+
+let selects=[
+document.getElementById("adCourse"),
+document.getElementById("mCourse")
+];
+
+selects.forEach(s=>
+courses.forEach(c=>
+s.innerHTML+=`<option>${c[0]}</option>`
+)
+);
+
+document.getElementById("notesGrid").innerHTML=
+
+notes.map(n=>`
+
+<article class="card note">
+
+<h3>📄 ${n[0]}</h3>
+
+<p>${n[1]}</p>
+
+<button
+class="btn outline"
+onclick="printNote('${n[0]}','${encodeURIComponent(n[1])}')">
+Print / Save PDF
+</button>
+
+</article>
+
+`).join("");
+
+}
+
+function viewCourse(i){
+
+let c=courses[i];
+
+document.getElementById("courseBody").innerHTML=`
+
+<span class="badge">
+${c[1]} ${c[2]}
+</span>
+
+<h2>${c[0]}</h2>
+
+<p>${c[3]}</p>
+
+<h3>📚 Subjects / Syllabus</h3>
+
+<div class="subjects">
+
+${c[4].map(x=>
+`<div class="subject">✓ ${x}</div>`
+).join("")}
+
+</div>
+
+<button
+class="btn green"
+onclick="closeM('courseModal');openAdmission('${c[0]}')">
+
+📝 Enroll Now
+
+</button>
+
+`;
+
+document.getElementById("courseModal").classList.add("show");
+
+}
+
+function openAdmission(course){
+
+document.getElementById("admissionModal").classList.add("show");
+
+if(course)
+document.getElementById("mCourse").value=course;
+
+}
+
+function closeM(id){
+
+document.getElementById(id).classList.remove("show");
+
+}
+
+function tab(id,b){
+
+document.querySelectorAll(".panel")
+.forEach(x=>x.classList.remove("active"));
+
+document.getElementById(id)
+.classList.add("active");
+
+document.querySelectorAll(".tab")
+.forEach(x=>x.classList.remove("active"));
+
+b.classList.add("active");
+
+}
+
+function toast(t){
+
+let x=document.getElementById("toast");
+
+x.textContent=t;
+
+x.classList.add("show");
+
+setTimeout(()=>{
+x.classList.remove("show")
+},4000);
+
+}
+
+function students(){
+
+return JSON.parse(
+localStorage.getItem("aca_students")||"[]"
+);
+
+}
+
+function admission(e,modal){
+
+e.preventDefault();
+
+let name=modal?mName.value:adName.value;
+
+let mobile=modal?mMobile.value:adMobile.value;
+
+let course=modal?mCourse.value:adCourse.value;
+
+let id="ACA"+Math.floor(10000+Math.random()*90000);
+
+let s={
+id,
+name,
+mobile,
+course,
+date:new Date().toLocaleDateString("en-IN")
+};
+
+let a=students();
+
+a.push(s);
+
+localStorage.setItem(
+"aca_students",
+JSON.stringify(a)
+);
+
+e.target.reset();
+
+if(modal)
+closeM("admissionModal");
+
+toast(
+"Form submitted successfully! Student ID: "+id
+);
+
+}
+
+function studentLogin(e){
+
+e.preventDefault();
+
+let s=students().find(
+x=>x.id===sid.value.trim() &&
+x.mobile===smobile.value.trim()
+);
+
+let box=document.getElementById("studentResult");
+
+if(!s){
+
+box.innerHTML=`
+<div class="notice error">
+Student record नहीं मिला।
+सही Student ID और mobile डालें।
+</div>`;
+
+return;
+
+}
+
+box.innerHTML=`
+
+<div class="notice">
+Login successful.
+</div>
+
+<h3>
+Welcome, ${s.name}
+</h3>
+
+<p>
+<b>Student ID:</b> ${s.id}
+<br>
+<b>Course:</b> ${s.course}
+<br>
+<b>Mobile:</b> ${s.mobile}
+<br>
+<b>Date:</b> ${s.date}
+</p>
+
+<button
+class="btn primary"
+onclick="doc('${s.id}','certificate')">
+📜 Certificate
+</button>
+
+<button
+class="btn green"
+onclick="doc('${s.id}','marksheet')">
+📊 Marksheet
+</button>
+
+`;
+
+}
+
+function adminLogin(e){
+
+e.preventDefault();
+
+if(
+auser.value==="admin" &&
+apass.value==="admin123"
+){
+
+document.getElementById("adminResult").innerHTML=`
+
+<div class="notice">
+Demo admin login successful.
+</div>
+
+<p>
+Total students:
+<b>${students().length}</b>
+</p>
+
+<button
+class="btn primary"
+onclick="listStudents()">
+View Records
+</button>
+
+<div id="alist"></div>
+
+`;
+
+}
+
+else{
+
+document.getElementById("adminResult").innerHTML=`
+
+<div class="notice error">
+Invalid demo credentials.
+</div>
+
+`;
+
+}
+
+}
+
+function listStudents(){
+
+let a=students();
+
+document.getElementById("alist").innerHTML=
+
+a.length ?
+
+a.map(x=>
+`<p>
+<b>${x.id}</b> —
+${x.name} —
+${x.course} —
+${x.mobile}
+</p>`
+).join("")
+
+:
+
+"<p>No records.</p>";
+
+}
+
+function lookup(type){
+
+let id=prompt(
+"Student ID / Certificate Number डालें:"
+);
+
+if(id){
+
+let s=students().find(
+x=>x.id.toLowerCase()===
+id.trim().toLowerCase()
+);
+
+if(s)
+doc(s.id,type);
+
+else
+toast("Record नहीं मिला।");
+
+}
+
+}
+
+function doc(id,type){
+
+let s=students().find(x=>x.id===id);
+
+if(!s)return;
+
+let title=
+type==="certificate"
+?
+"Certificate of Course Completion"
+:
+"Student Marksheet";
+
+let extra=
+type==="certificate"
+?
+`This is to certify that <b>${s.name}</b>
+(Student ID: ${s.id}) is enrolled in
+<b>${s.course}</b> at Aditya Computer Academy.`
+:
+`Student: <b>${s.name}</b>
+<br>
+Student ID: <b>${s.id}</b>
+<br>
+Course: <b>${s.course}</b>
+<br>
+Result: To be updated by Academy`;
+
+let w=window.open("","_blank");
+
+w.document.write(`
+
+<html>
+
+<head>
+
+<title>${title}</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:30px;
+text-align:center;
+color:#062d58
+}
+
+.paper{
+border:8px solid #0877c9;
+padding:50px;
+min-height:520px
+}
+
+h1{
+color:#0877c9
+}
+
+p{
+font-size:18px;
+line-height:1.8
+}
+
+button{
+padding:12px 20px
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="paper">
+
+<h1>
+ADITYA COMPUTER ACADEMY
+</h1>
+
+<h2>
+${title}
+</h2>
+
+<p>
+${extra}
+</p>
+
+<p>
+Date: ${s.date}
+</p>
+
+<p style="margin-top:90px">
+Authorized Signatory
+</p>
+
+<button onclick="print()">
+Print / Save as PDF
+</button>
+
+</div>
+
+</body>
+
+</html>
+
+`);
+
+w.document.close();
+
+}
+
+function printNote(title,text){
+
+let w=window.open("","_blank");
+
+w.document.write(`
+
+<html>
+
+<head>
+<title>${title}</title>
+</head>
+
+<body
+style="
+font-family:Arial;
+padding:35px;
+line-height:1.8
+">
+
+<h1>${title}</h1>
+
+<p>
+${decodeURIComponent(text)}
+</p>
+
+<button onclick="print()">
+Print / Save as PDF
+</button>
+
+</body>
+
+</html>
+
+`);
+
+w.document.close();
+
+}
+
+init();
+
+</script>
+
+</body>
+</html>
